@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>عرض نتائج الطلاب</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>نتائج الطلاب - مدرسة الأمل</h1>
+    <select id="sourceSelector" onchange="changeSource(this.value)">
+      <option value="firebase">Firebase</option>
+      <option value="googleSheets">Google Sheets</option>
+      <option value="mysql">MySQL</option>
+    </select>
+    <input type="text" id="studentId" placeholder="أدخل رقم الجلوس">
+    <button onclick="searchResult()">عرض النتيجة</button>
+    <div id="result" class="hidden">
+      <h2>نتيجة الطالب</h2>
+      <p><strong>الاسم:</strong> <span id="name"></span></p>
+      <table>
+        <thead>
+          <tr><th>المادة</th><th>الدرجة</th></tr>
+        </thead>
+        <tbody id="gradesTable"></tbody>
+      </table>
+      <p><strong>المجموع:</strong> <span id="total"></span></p>
+    </div>
+  </div>
+  <script src="config.js"></script>
+  <script src="config.js"></script>
+  <script src="firebase.js"></script>
+  <script src="sheets.js"></script>
+  <script src="mysql.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
